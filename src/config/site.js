@@ -1,9 +1,9 @@
 export const SITE_CONFIG = {
   repositoryUrl: "https://github.com/vinisilvabariane/app_firekeep",
   downloadUrl:
-    "https://github.com/vinisilvabariane/app_firekeep/raw/refs/heads/main/release/firekeep-setup-beta.1.7.exe",
-  version: "beta.1.7",
-  installerSize: "159 MB",
+    "https://github.com/vinisilvabariane/app_firekeep/raw/refs/heads/main/release/firekeep-setup-beta.1.8.exe",
+  version: "beta.1.8",
+  installerSize: "160 MB",
   platform: "Windows 10 e 11",
 };
 
@@ -28,6 +28,25 @@ export const PRODUCT_SCENES = [
 ];
 
 export const RELEASE_LOGS = [
+  {
+    version: "beta.1.8",
+    date: "23 jul 2026",
+    title: "Navegação persistente e desempenho aprimorado",
+    summary:
+      "Beta focada em preservar o estado do navegador, eliminar artefatos visuais e reduzir o custo de editor, terminais e superfícies animadas.",
+    items: [
+      "Cada aba do navegador agora mantém seu próprio webview ativo, sem recarregar a página ao alternar entre guias.",
+      "Abas fechadas são persistidas imediatamente e não reaparecem quando o navegador ou o app é aberto novamente.",
+      "Redimensionamentos do painel e da janela realinham o conteúdo do navegador, corrigindo faixas pretas.",
+      "O navegador aguarda o webview ficar pronto antes de usar sua API e oferece iframe como fallback no modo web.",
+      "A GPU voltou a ser habilitada por padrão, com FIREKEEP_DISABLE_GPU=1 disponível para drivers problemáticos.",
+      "Monaco, terminais ocultos e superfícies com fundos GIF receberam otimizações para reduzir renderizações e processamento contínuo.",
+      "Cards ficaram mais transparentes, e o controle de fundo agora chega a 0% com escurecimento adicional em níveis baixos.",
+      "Pesquisas usam o Google em português e a sessão isolada preserva a preferência de tema escuro.",
+      "Sessões de terminal ganharam numeração estável; fechar a última aba encerra o PTY, enquanto minimizar preserva a sessão.",
+      "Nomes de fundos e pares nome/link do YouTube agora são restaurados pelos seeds em clones e instalações novas.",
+    ],
+  },
   {
     version: "beta.1.7",
     date: "22 jul 2026",

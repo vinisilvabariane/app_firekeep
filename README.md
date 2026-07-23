@@ -29,7 +29,7 @@ O build de produção é gerado em `dist/`.
 Os links do repositório, instalador, versão e plataforma ficam em
 [`src/config/site.js`](src/config/site.js).
 
-O instalador fica em `release/firekeep-setup-beta.1.7.exe`, versionado com Git
+O instalador fica em `release/firekeep-setup-beta.1.8.exe`, versionado com Git
 LFS por ultrapassar o limite convencional de arquivos do GitHub. O botão do
 site aponta diretamente para esse arquivo.
 
@@ -47,5 +47,5 @@ public/
   firekeep-scene-*.gif        # Cenários usados na demonstração
   og.png                      # Imagem para compartilhamento
 release/
-  firekeep-setup-beta.1.7.exe  # Instalador Windows via Git LFS
+  firekeep-setup-beta.1.8.exe  # Instalador Windows via Git LFS
 ```
