@@ -1,9 +1,9 @@
 export const SITE_CONFIG = {
-  repositoryUrl: "https://github.com/vinisilvabariane/app_firekeep_react_site",
+  repositoryUrl: "https://github.com/vinisilvabariane/app_firekeep",
   downloadUrl:
-    "https://github.com/vinisilvabariane/app_firekeep_react_site/raw/refs/heads/main/release/firekeep-setup-1.0.1.exe",
-  version: "1.0.0-beta.6",
-  installerSize: "141 MB",
+    "https://github.com/vinisilvabariane/app_firekeep/raw/refs/heads/main/release/firekeep-setup-beta.1.7.exe",
+  version: "beta.1.7",
+  installerSize: "159 MB",
   platform: "Windows 10 e 11",
 };
 
@@ -29,20 +29,38 @@ export const PRODUCT_SCENES = [
 
 export const RELEASE_LOGS = [
   {
-    version: "1.0.0-beta.6",
+    version: "beta.1.7",
+    date: "22 jul 2026",
+    title: "Monaco, explorador operacional e navegador redesenhado",
+    summary:
+      "Beta de amadurecimento do workspace desktop, com novo editor Monaco, explorador de arquivos operacional, navegador redesenhado e reforços de estabilidade no Electron.",
+    items: [
+      "Editor de código migrado para Monaco, com workers locais, linguagens, salvamento por Ctrl+S, tratamento de erros e recuperação visual.",
+      "Explorador agora cria arquivos e pastas, abre menu de contexto, confirma exclusões e move itens por arrastar e soltar.",
+      "Navegação do explorador ganhou ação global para subir um nível ao lado do controle de recolher o painel.",
+      "Navegador interno ganhou uma tela inicial de pesquisa e uma faixa horizontal de favoritos, substituindo a grade de favoritos.",
+      "Workspace ganhou dock central para Explorador, Navegador, Terminal, Grid e tela cheia, com carregamento sob demanda dos painéis pesados.",
+      "Novos logotipos e ícones do Firekeep aplicados na janela, no app e no instalador Windows.",
+      "API local ganhou operações para criar, mover e excluir arquivos e pastas.",
+      "Navegador reutiliza um único webview entre as guias e reduziu o limite da sessão para oito guias para conter memória.",
+      "Recuperação de página travada recria o webview; crash do processo GPU não recarrega mais a janela inteira e suas guias.",
+    ],
+  },
+  {
+    version: "beta.1.6",
     date: "20 jul 2026",
     title: "Navegador interno mais estável",
-    summary: "Beta atual com ajustes no navegador interno e organização do histórico de versões.",
+    summary: "Beta com ajustes no navegador interno e organização do histórico de versões.",
     items: [
       "Fechar a última aba agora fecha o navegador interno e deixa o próximo início preparado no Hub.",
       "O navegador voltou a usar apenas um webview ativo por vez para reduzir tela preta, travamentos e crashes do Chromium.",
       "Pesquisas digitadas agora usam uma página leve do DuckDuckGo em vez da busca do Google dentro do webview.",
-      "Falhas de carregamento e crashes de página agora exibem um painel de recuperação.",
-      "GPU fica desativada por padrão no Electron; FIREKEEP_USE_GPU=1 reativa manualmente.",
+      "Falhas de carregamento e crashes de página agora exibem o painel de recuperação em vez de deixar a área preta.",
+      "GPU fica desativada por padrão no Electron, inclusive em desenvolvimento; FIREKEEP_USE_GPU=1 reativa manualmente.",
     ],
   },
   {
-    version: "1.0.0-beta.5",
+    version: "beta.1.5",
     date: "20 jul 2026",
     title: "Interface, Spotify e Worker local",
     summary: "Beta de consolidação de interface, música, Spotify, Worker do backend e estabilidade gráfica.",
@@ -51,11 +69,11 @@ export const RELEASE_LOGS = [
       "Versão atual exibida no canto inferior direito do app.",
       "Backend local movido para um Worker Node separado do processo principal do Electron.",
       "Modo de música alterna entre YouTube e Spotify, com OAuth PKCE e Web Playback SDK.",
-      "Build instalada no Windows desativa GPU por padrão para reduzir tela preta e crash ao usar webview.",
+      "Rotas, arquivos locais, logs JSONL, preferências, seeds e gateway de terminal rodam fora do processo principal.",
     ],
   },
   {
-    version: "1.0.0-beta.4",
+    version: "beta.1.4",
     date: "20 jul 2026",
     title: "Abas, favoritos e recuperação gráfica",
     summary: "Beta focado no navegador interno, persistência de abas/favoritos e recuperação da janela Electron.",
@@ -68,20 +86,20 @@ export const RELEASE_LOGS = [
     ],
   },
   {
-    version: "1.0.0-beta.3",
+    version: "beta.1.3",
     date: "18 jul 2026",
     title: "Backend modular e instalador Windows",
     summary: "Beta grande que separa o backend em módulos, adiciona persistência local e prepara o instalador.",
     items: [
       "Backend separado em routes, stores, fs-service, terminal-gateway, config e utils.",
-      "API local consolidada para saúde, workspace, projetos, músicas, fundos, preferências, arquivos e terminal.",
+      "API local consolidada para saúde, workspace, projetos, músicas, fundos, preferências, arquivos e terminal via WebSocket.",
       "Painel de fundos, player de música, explorador, editor e terminal com múltiplas sessões.",
       "Upload de fundos passou a usar corpo binário puro, evitando JSON/base64 grande.",
       "Electron Builder configurado para gerar instalador Windows NSIS x64.",
     ],
   },
   {
-    version: "1.0.0-beta.2",
+    version: "beta.1.2",
     date: "18 jul 2026",
     title: "Empacotamento",
     summary: "Beta pequeno de ajustes no fluxo de release.",
@@ -91,7 +109,7 @@ export const RELEASE_LOGS = [
     ],
   },
   {
-    version: "1.0.0-beta.1",
+    version: "beta.1.1",
     date: "18 jul 2026",
     title: "Workspace desktop expandido",
     summary: "Beta que transforma a base inicial em um workspace desktop mais completo.",
@@ -103,7 +121,7 @@ export const RELEASE_LOGS = [
     ],
   },
   {
-    version: "1.0.0-beta.0",
+    version: "beta.1.0",
     date: "18 jul 2026",
     title: "Protótipo inicial",
     summary: "Protótipo inicial do Firekeep como app Node + React/Electron.",
