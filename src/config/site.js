@@ -1,8 +1,7 @@
 export const SITE_CONFIG = {
   repositoryUrl: "https://github.com/vinisilvabariane/desktop_fk",
-  downloadUrl:
-    "https://github.com/vinisilvabariane/desktop_fk/releases/download/v1.0.0/Firekeep-Setup-1.0.0.exe",
-  version: "1.0.0",
+  downloadUrl: "/release/Firekeep-Setup-1.0.1.exe",
+  version: "1.0.1",
   installerSize: "155 MB",
   platform: "Windows 10 e 11",
 };
