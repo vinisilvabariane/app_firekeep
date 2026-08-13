@@ -9,7 +9,7 @@ export function UpdatesSection({ standalone = false }) {
     () =>
       RELEASE_LOGS.find((release) => release.version === selectedVersion) ??
       RELEASE_LOGS[0],
-    [selectedVersion]
+    [selectedVersion],
   );
 
   return (
@@ -18,16 +18,17 @@ export function UpdatesSection({ standalone = false }) {
       className={standalone ? "updates-section updates-section--page" : "updates-section"}
     >
       <div className="updates-heading">
-        <p className="eyebrow">Logs de atualização</p>
-        <h2>Veja exatamente o que mudou em cada versão.</h2>
+        <p className="eyebrow">Historico de lancamentos</p>
+        <h2>Do primeiro beta ao Firekeep estavel.</h2>
         <p>
-          As notas abaixo seguem o log real do app e mostram a evolução das betas
-          até a versão atual do Firekeep.
+          Este historico acompanha o release log oficial do aplicativo. A versao
+          1.0.0 marca o primeiro lancamento estavel; as versoes anteriores fazem
+          parte do ciclo beta.
         </p>
       </div>
 
       <div className="updates-console" aria-live="polite">
-        <aside className="version-rail" aria-label="Versões lançadas">
+        <aside className="version-rail" aria-label="Versoes lancadas">
           {RELEASE_LOGS.map((release) => (
             <button
               key={release.version}
@@ -60,11 +61,7 @@ export function UpdatesSection({ standalone = false }) {
             {selectedRelease.items.map((item, index) => (
               <li key={item}>
                 <span className="timeline-marker">
-                  {index === 0 ? (
-                    <Flame aria-hidden="true" />
-                  ) : (
-                    <CheckCircle2 aria-hidden="true" />
-                  )}
+                  {index === 0 ? <Flame aria-hidden="true" /> : <CheckCircle2 aria-hidden="true" />}
                 </span>
                 <span>{item}</span>
               </li>
