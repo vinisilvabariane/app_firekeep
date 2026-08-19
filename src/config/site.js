@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   repositoryUrl: "https://github.com/vinisilvabariane/desktop_fk",
-  downloadUrl: "/release/Firekeep-Setup-1.0.1.exe",
-  version: "1.0.1",
+  downloadUrl: "/release/Firekeep-Setup-1.0.2.exe",
+  version: "1.0.2",
   installerSize: "155 MB",
   platform: "Windows 10 e 11",
 };
@@ -18,6 +18,18 @@ export const PRODUCT_SCENES = [
 ];
 
 export const RELEASE_LOGS = [
+  {
+    version: "1.0.2",
+    date: "18 ago 2026",
+    title: "Terminal integrado corrigido para Claude Code e Codex",
+    summary:
+      "Ajustes no terminal integrado do Firekeep para funcionar corretamente com apps de tela cheia como o Claude Code e o Codex, alem de copiar e colar.",
+    items: [
+      "Corrigido texto embaralhado ao rodar o Claude Code: removida uma conversao automatica de quebra de linha que desalinhava o cursor em apps de tela cheia.",
+      "Tecla Tab agora e sempre encaminhada ao processo em execucao no terminal, em vez de ser interceptada pelo autocomplete proprio do Firekeep.",
+      "Terminal ganhou copiar com Ctrl+C quando ha texto selecionado e colar com o botao direito do mouse.",
+    ],
+  },
   {
     version: "1.0.0",
     date: "12 ago 2026",
