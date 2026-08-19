@@ -2,8 +2,15 @@ import { useMemo, useState } from "react";
 import { CheckCircle2, Flame, GitBranch, PackageOpen } from "lucide-react";
 import { RELEASE_LOGS } from "@/config/site";
 
+function isBeta(release) {
+  return release.version.startsWith("beta.");
+}
+
 export function UpdatesSection({ standalone = false }) {
   const [selectedVersion, setSelectedVersion] = useState(RELEASE_LOGS[0].version);
+
+  const stableReleases = useMemo(() => RELEASE_LOGS.filter((release) => !isBeta(release)), []);
+  const betaReleases = useMemo(() => RELEASE_LOGS.filter(isBeta), []);
 
   const selectedRelease = useMemo(
     () =>
@@ -29,17 +36,34 @@ export function UpdatesSection({ standalone = false }) {
 
       <div className="updates-console" aria-live="polite">
         <aside className="version-rail" aria-label="Versoes lancadas">
-          {RELEASE_LOGS.map((release) => (
-            <button
-              key={release.version}
-              type="button"
-              className={release.version === selectedVersion ? "is-active" : ""}
-              onClick={() => setSelectedVersion(release.version)}
-            >
-              <span>v{release.version}</span>
-              <small>{release.date}</small>
-            </button>
-          ))}
+          <div className="version-group">
+            <p className="version-group-label">Versao oficial</p>
+            {stableReleases.map((release) => (
+              <button
+                key={release.version}
+                type="button"
+                className={release.version === selectedVersion ? "is-active" : ""}
+                onClick={() => setSelectedVersion(release.version)}
+              >
+                <span>v{release.version}</span>
+                <small>{release.date}</small>
+              </button>
+            ))}
+          </div>
+          <div className="version-group">
+            <p className="version-group-label">Betas</p>
+            {betaReleases.map((release) => (
+              <button
+                key={release.version}
+                type="button"
+                className={release.version === selectedVersion ? "is-active" : ""}
+                onClick={() => setSelectedVersion(release.version)}
+              >
+                <span>v{release.version}</span>
+                <small>{release.date}</small>
+              </button>
+            ))}
+          </div>
         </aside>
 
         <article className="release-panel">

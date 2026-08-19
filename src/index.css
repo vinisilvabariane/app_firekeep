@@ -872,10 +872,32 @@ a:focus-visible {
 }
 
 .version-rail {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   align-content: start;
+  overflow-y: auto;
   border-right: 1px solid var(--line);
   background: var(--ink);
+}
+
+.version-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.version-group + .version-group {
+  border-top: 1px solid rgba(255, 253, 248, 0.16);
+}
+
+.version-group-label {
+  margin: 0;
+  padding: 0.9rem 1.25rem 0.35rem;
+  font-family: var(--mono);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: rgba(255, 253, 248, 0.4);
 }
 
 .version-rail button {
@@ -1283,15 +1305,30 @@ a:focus-visible {
   }
 
   .version-rail {
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(140px, 1fr);
+    flex-direction: row;
     overflow-x: auto;
+    overflow-y: hidden;
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
+  .version-group {
+    flex-direction: row;
+    flex: none;
+  }
+
+  .version-group + .version-group {
+    border-top: 0;
+    border-left: 1px solid rgba(255, 253, 248, 0.16);
+  }
+
+  .version-group-label {
+    display: none;
+  }
+
   .version-rail button {
     min-height: 78px;
+    min-width: 140px;
     border-right: 1px solid rgba(255, 253, 248, 0.12);
     border-bottom: 0;
   }
