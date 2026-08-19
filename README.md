@@ -29,9 +29,11 @@ O build de produção é gerado em `dist/`.
 Os links do repositório, instalador, versão e plataforma ficam em
 [`src/config/site.js`](src/config/site.js).
 
-O instalador fica em `release/firekeep-setup-beta.1.8.exe`, versionado com Git
-LFS por ultrapassar o limite convencional de arquivos do GitHub. O botão do
-site aponta diretamente para esse arquivo.
+O instalador não fica versionado neste repositório: o botão do site aponta
+direto para o asset publicado em GitHub Releases do repositório
+[`desktop_fk`](https://github.com/vinisilvabariane/desktop_fk/releases). Isso
+evita o limite de tamanho de arquivo do GitHub/Vercel e o problema de a Vercel
+não buscar o conteúdo real de arquivos versionados via Git LFS.
 
 ## Estrutura
 
@@ -46,6 +48,4 @@ public/
   logo.png                    # Marca sem fundo
   firekeep-scene-*.gif        # Cenários usados na demonstração
   og.png                      # Imagem para compartilhamento
-release/
-  firekeep-setup-beta.1.8.exe  # Instalador Windows via Git LFS
 ```
